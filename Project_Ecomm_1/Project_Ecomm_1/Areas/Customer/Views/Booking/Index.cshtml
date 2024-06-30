@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Project_Ecomm_1.Models.OrderHeader>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>*@
+<div class="row">
+    <div class="col-9">
+        <h2 class="text-primary">Order History</h2>
+    </div>
+</div>
+<div class="container rounded border p-2 m-2">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>TotalAmount</th>
+                <th>Order Status</th>
+                <th>Action Button</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.OrderDate</td>
+                    <td>@item.OrderTotal</td>
+                    <td>@item.OrderStatus</td>
+                    <td>
+                        <form method="post" asp-action="DuplicateOrder" asp-route-id="@item.Id">
+                            <button type="submit">
+                                Re-Order
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+﻿@model Project_Ecomm_1.ViewModels.OrdersVM
+
+<form method="post">
+
+    <input type="hidden" asp-for="OrderDetail.ProductId" />
+    <h1 class="text-primary">Order Details</h1>
+
+    @foreach (var list in Model.listOrder)
+    {
+
+        <div class="container border rounded p-2 m-2">
+            <table class="table table-active table-bordered table-striped" id="tblData">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Qantity</th>
+                        <th>Total Amount</th>
+                        <th>product Image</th>
+
+
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    <tr>
+
+                        <td>@list.Product.Title</td>
+                        <td>@list.Price</td>
+                        <td>@list.Count</td>
+                        <td>@list.OrderHeader.OrderTotal</td>
+                        <td width="20%"><img src="@list.Product.ImageUrl" width="100%" class="rounded" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    }
+
+</form>

@@ -1,0 +1,91 @@
+﻿@model Project_Ecomm_1.ViewModels.OrdersVM
+
+
+<h2 class="text-primary border-bottom text-center m-lg-5 "> OrderDetailsUser </h2>
+@foreach (var list in Model.listOrder)
+{
+    @*<div class="row">
+    <table class="table table-bordered table-active table-striped ">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <tr>
+                    <td>@list.OrderHeaderId</td>
+                    <td>@list.OrderHeader.OrderDate</td>
+                    <td >@list.OrderHeader.OrderStatus</td>
+
+                </tr>
+        </tbody>
+    </table>
+</div>*@
+
+
+
+
+    <div class="row">
+        <div class="col-3 border-1  ">
+            <h3 class="text-info">Order ID</h3>
+            <p>@list.OrderHeaderId</p>
+        </div>
+        <div class="col-3 border-1  ">
+            <h3 class="text-info">Order Date</h3>
+            <p>@list.OrderHeader.OrderDate</p>
+        </div>
+        <div class="col-3 border-1  ">
+            <h3 class="text-info">Order Status</h3>
+            <p>@list.OrderHeader.OrderStatus</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-bordered table-active table-striped ">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Pric</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>@list.Product.Title</td>
+                    <td>@list.Product.Price</td>
+                    <td>@list.Count</td>
+                    <td>
+                        <h6>
+                            @*                        <strong>@list.Price<span class="text-muted">x</span> @list.Count =*@
+                            @(list.Price * list.Count)
+                        </h6>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <br />
+
+
+}
+
+<div class="row ">
+    <div class=" col-12 col-md-6 offset-md-6 col-lg-4 offset-lg-8 pr-4">
+        <ul class="list-group ">
+            <li class="list-group-item d-flex justify-content-between bg-dark shadow">
+                <span class="text-white"> Total (USD)</span>
+                <strong class="text-white">$ <span id="txtOrderTotal">@Model.OrderHeader.OrderTotal</span></strong>
+            </li>
+        </ul>
+    </div>
+</div>
+
+

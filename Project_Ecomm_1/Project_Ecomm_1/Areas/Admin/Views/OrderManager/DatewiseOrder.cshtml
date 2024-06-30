@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Project_Ecomm_1.Models.OrderHeader>
+
+<div class="row">
+    <div class="col-9">
+        <h2 class="text-primary"> Date Wise Orders </h2>
+    </div>
+
+</div>
+@*
+<table border="0" cellspacing="5" cellpadding="5">
+    <tbody>
+        <tr>
+            <td>Minimum date:</td>*@
+@*            <td><input type="text" id="min" name="min"></td>
+        </tr>
+        <tr>
+            <td>Maximum date:</td>
+            <td><input type="text" id="max" name="max"></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container border rounded p-2 m-2">
+    <table class="table table-active table-bordered table-striped" id="tblData">
+        <thead>
+            <tr>
+                <th>Order No.</th>
+                <th>Order Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Order Status</th>
+                <th>Order Total</th>
+
+            </tr>
+        </thead>
+    </table>
+</div>*@
+
+
+
+@*<table border="0" cellspacing="5" cellpadding="5">
+    <tbody>
+        <tr>
+            <td>Minimum date:</td>
+            <td><input type="text" id="min" name="min"></td>
+        </tr>
+        <tr>
+            <td>Maximum date:</td>
+            <td><input type="text" id="max" name="max"></td>
+        </tr>
+    </tbody>
+</table>*@
+
+<table id="example" class="display nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Order No.</th>
+            <th>Order Date</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Order Status</th>
+            <th>Order Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var list in Model)
+        {
+            <tr>
+                <td>@list.Id</td>
+                <td>@list.OrderDate</td>
+                <td>@list.Name</td>
+                <td>@list.ApplicationUser.Email</td>
+                <td>@list.OrderStatus</td>
+                <td>@list.OrderTotal</td>
+            </tr>
+
+
+        }
+    </tbody>
+
+    @section Scripts{
+        <script src="~/js/Datewiseorder.js"></script>
+    }

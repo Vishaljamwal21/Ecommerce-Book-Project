@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Project_Ecomm_1.Models.OrderHeader>
+
+<h2 class="text-primary text-center "> Select Date </h2>
+<div class="row">
+    <div class="col-12">
+        @using (Html.BeginForm("DateWiseorderasp", "OrderManager", FormMethod.Post))
+        {
+            <label for="startDate">Start Date:</label>
+            <input type="date" name="startDate" id="startDate" />
+            <label for="endDate">End Date:</label>
+            <input type="date" name="endDate" id="endDate" />
+            <label for="name">Order Status:</label>
+            <select name="name">
+                <option value="SelectOrderStatus">Select Order Status</option>
+                <option value="Pending">Pending</option>
+                <option value="AllOrders">AllOrder</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Approved">Approved Orders</option>
+            </select>
+            <input type="submit" value="submit" />
+
+        }
+    </div>
+</div>
+@if (Model != null)
+{
+
+    <div class="row">
+        <table class="table table-bordered table-active table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Order Date</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Street Address</th>
+                    <th>Order Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.OrderDate</td>
+                        <td>@item.State</td>
+                        <td>@item.City</td>
+                        <td>@item.StreetAddress</td>
+                        <td>@item.OrderStatus</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+}

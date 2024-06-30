@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Project_Ecomm_1.Models.Product>
+<form method="get" action="/Customer/Home/Index">
+    <div class="row">
+        <div class="col-1">
+            <label for="selectedOption">Search Option:</label>
+        </div>
+        <div class="col-2">
+            @Html.DropDownList("selectedOption", (SelectList)ViewBag.SearchOptions, new { @class = "form-control" })
+        </div>
+        <div class="col-1">
+            <label for="searchTerm">Search Term:</label>
+        </div>
+        <div class="col-2">
+            <input type="text" name="searchTerm" id="searchTerm" class="form-control" />
+        </div>
+        <div class="col-3 ">
+            <button type="submit" class="btn btn-primary ">Search</button>&nbsp;
+            <button type="button" onclick="clearSearch()" class="btn btn-danger">Clear</button>
+        </div>
+        
+    </div>
+    <script>
+        function clearSearch() {
+            document.getElementById("selectedOption").selectedIndex = 0;
+            document.getElementById("searchTerm").Value = "";
+            document.forms[0].submit();
+        }
+    </script>
+</form>
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-lg-3 col-md-6">
+            <div class="row p-2">
+                <div class="col-12  p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                    <div class="card" style="border:0px;">
+                        <img src="@product.ImageUrl" class="card-img-top rounded" />
+                        <div class="pl-1">
+                            <p class="card-title h5"><b style="color:#2c3e50">@product.Title</b></p>
+                            <p class="card-title text-primary">by <b>@product.Author</b></p>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <p>List Price: <strike><b class="">$@product.ListPrice.ToString("0.00")</b></strike></p>
+                        </div>
+                        <div style="padding-left:5px;">
+                            <p style="color:maroon">As low as: <b class="">$@product.Price100.ToString("0.00")</b></p>
+                        </div>
+                    </div>
+                    <div>
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-id="@product.Id">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,23 @@
+﻿@model Project_Ecomm_1.Models.OrderHeader
+<div class="container row">
+    <div class="col-12 text-center">
+        <h1 class="text-success text-center">
+            Order Submitted Successfully
+        </h1><br />
+        <img src="https://img.freepik.com/premium-vector/x9tiny-man-ordering-product-online-via-smartphone-app-phone-order-illustration-fast-delivery-service_566886-1773.jpg?size=626&ext=jpg&ga=GA1.1.1639177091.1699170355&semt=ais" width="50%" />
+    </div>
+    <div class="col-12 text-center" style="color:green">
+        <br />
+        Thank you for your order! <br />
+        We have received your order and we will send
+        a follow up email shortly!
+        <br />
+        Your Order Number is :@Model.Id
+    </div>
+   
+</div>
+<br />
+<br />
+<div class="col-7 text-right">
+    <a asp-action="Index" asp-controller="Home" class="btn btn-success btn-sm ">Continue Shopping</a>
+</div>
