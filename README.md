@@ -35,7 +35,7 @@ This is an E-commerce project built using ASP.NET Core and C# with a Code-First 
 -  Update-Database
 
 4. **Configure Environment Variables**:
-- Ensure you have the following environment variables set in your development environment for sensitive information:
+**Ensure you have the following environment variables set in your development environment for sensitive information**:
 
 - TWILIO_ACCOUNT_SID
 - TWILIO_AUTH_TOKEN
@@ -51,19 +51,19 @@ This is an E-commerce project built using ASP.NET Core and C# with a Code-First 
 - Run the project using Ctrl + F5.
 
 6. **Usage**
--  Register the First User:
+**Register the First User**:
 -  The first registered user will be assigned the Admin role.
 -  Subsequent users will be assigned the Individual role by default.
 
--  Admin Functionality:
+**Admin Functionality**:
 -  Admin can add companies.
 -  Admin can register company users and employees.
 
--  Adding Products:
+**Adding Products**:
 -  Company users can add products.
 -  Employees can assist in managing the company's products.
 
-- Shopping:
+**Shopping**:
 - Individual users can browse and shop for products.
 
 **Project Structure**
@@ -83,7 +83,7 @@ This is an E-commerce project built using ASP.NET Core and C# with a Code-First 
 
 **Configuration**
 
- - appsettings.json:
+ **appsettings.json**:
  {
   "ConnectionStrings": {
     "DefaultConnection": "Your SQL Server connection string here"
@@ -113,7 +113,7 @@ This is an E-commerce project built using ASP.NET Core and C# with a Code-First 
 
 **Update Program.cs for OAuth Configuration**:
 
-- In Program.cs, add the following configurations:
+**In Program.cs, add the following configurations**:
 - builder.Services.AddAuthentication()
     .AddGoogle(options =>
     {
