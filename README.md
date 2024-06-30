@@ -26,16 +26,16 @@ This is an E-commerce project built using ASP.NET Core and C# with a Code-First 
    cd Ecommerce-Book-Project
 
 2.**Open the Solution**:
-  Open the solution in Visual Studio 2022.
+ -  Open the solution in Visual Studio 2022.
 
 3. **Set Up the Database**:
-. Open the Package Manager Console from Tools > NuGet Package Manager > Package Manager Console.
-. Select the Project_Ecomm_1.DataAccess project in the console.
-  Add-Migration InitialMigration
-  Update-Database
+-  Open the Package Manager Console from Tools > NuGet Package Manager > Package Manager Console.
+-  Select the Project_Ecomm_1.DataAccess project in the console.
+- Add-Migration InitialMigration
+-  Update-Database
 
 4. **Configure Environment Variables**:
-. Ensure you have the following environment variables set in your development environment for sensitive information:
+- Ensure you have the following environment variables set in your development environment for sensitive information:
 
 - TWILIO_ACCOUNT_SID
 - TWILIO_AUTH_TOKEN
@@ -47,41 +47,43 @@ This is an E-commerce project built using ASP.NET Core and C# with a Code-First 
 - EMAIL_SENDER
 
 5. **Run the Project**:
-. Set Project_Ecomm_1 as the startup project.
-.Run the project using Ctrl + F5.
+- Set Project_Ecomm_1 as the startup project.
+- Run the project using Ctrl + F5.
 
 6. **Usage**
-1. Register the First User:
-. The first registered user will be assigned the Admin role.
-. Subsequent users will be assigned the Individual role by default.
+-  Register the First User:
+-  The first registered user will be assigned the Admin role.
+-  Subsequent users will be assigned the Individual role by default.
 
-2. Admin Functionality:
-. Admin can add companies.
-. Admin can register company users and employees.
+-  Admin Functionality:
+-  Admin can add companies.
+-  Admin can register company users and employees.
 
-3. Adding Products:
-. Company users can add products.
-. Employees can assist in managing the company's products.
+-  Adding Products:
+-  Company users can add products.
+-  Employees can assist in managing the company's products.
 
-4. Shopping:
-. Individual users can browse and shop for products.
+- Shopping:
+- Individual users can browse and shop for products.
 
 **Project Structure**
-. Project_Ecomm_1: Main project with controllers, views, and other frontend components.
-. Project_Ecomm_1.DataAccess: Contains the Entity Framework Core context, models, and migrations.
-. Project_Ecomm_1.Models: Contains the domain models.
-. Project_Ecomm_1.Utility: Contains utility classes and constants.
+
+- Project_Ecomm_1: Main project with controllers, views, and other frontend components.
+- Project_Ecomm_1.DataAccess: Contains the Entity Framework Core context, models, and migrations.
+- Project_Ecomm_1.Models: Contains the domain models.
+- Project_Ecomm_1.Utility: Contains utility classes and constants.
 
 **Technologies Used**
-. ASP.NET Core: Web framework
-. Entity Framework Core: ORM for database interactions
-. ASP.NET Core Identity: Authentication and authorization
-. Google and Facebook OAuth: Third-party authentication
-. Stripe: Payment gateway integration
-. Twilio: SMS service for phone number verification
+- ASP.NET Core: Web framework
+- Entity Framework Core: ORM for database interactions
+- ASP.NET Core Identity: Authentication and authorization
+- Google and Facebook OAuth: Third-party authentication
+- Stripe: Payment gateway integration
+- Twilio: SMS service for phone number verification
 
 **Configuration**
- appsettings.json:
+
+ - appsettings.json:
  {
   "ConnectionStrings": {
     "DefaultConnection": "Your SQL Server connection string here"
@@ -108,9 +110,11 @@ This is an E-commerce project built using ASP.NET Core and C# with a Code-First 
   },
   "AllowedHosts": "*"
 }
+
 **Update Program.cs for OAuth Configuration**:
-. In Program.cs, add the following configurations:
-builder.Services.AddAuthentication()
+
+- In Program.cs, add the following configurations:
+- builder.Services.AddAuthentication()
     .AddGoogle(options =>
     {
         options.ClientId = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID");
@@ -123,4 +127,4 @@ builder.Services.AddAuthentication()
     });
 
 **Contact**
-For any queries or issues, please contact Vishal Jamwal at [vishaljamwal402@gmail.com].
+- For any queries or issues, please contact Vishal Jamwal at [vishaljamwal402@gmail.com].
